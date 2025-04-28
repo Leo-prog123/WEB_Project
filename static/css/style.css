@@ -1,0 +1,94 @@
+.timestamp {
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: white
+}
+
+#closed {
+    background: #A9A9A9;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px
+    margin-top: 20px;
+    }
+
+#opened {
+    background: #F08080;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 20px
+    }
+
+
+#kick_btn {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-bottom: 6px
+}
+
+#authorization{
+    color: red;
+    text-align: center
+}
+
+#wrong{
+    color: red
+}
+
+body {
+    background-color: #777777
+}
+
+#create_work_btn{
+    margin-left: 50px;
+    color: white;
+    border: solid white 1px;
+    padding: 5px;
+    margin-bottom: 0px
+}
+
+#wht-color1{
+    color: white;
+
+}
+
+#wht-color2{
+    color: white;
+    margin-right: 20px;
+    margin-bottom: 0px
+}
+
+#red-color1{
+    background-color: #777777;
+    border: solid red 1px;
+    margin-right: 20px
+}
+
+#wht-color3{
+    color: white
+}
+
+
+#authorization-btn{
+    background-color: #777777;
+    border: solid red 1px;
+    margin-right: 20px
+}
+
+#registration-btn{
+    background-color: #777777;
+    border: solid red 1px;
+    margin-right: 20px
+}
+
+.head{
+    margin-bottom: 10px
+}
+
+.wht-color4{
+    color: white
+}

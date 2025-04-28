@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet", href="static/css/style.css">
+    <title>{{title}}</title>
+</head>
+<body>
+<header class="header">
+    <div>
+    <nav class="navbar navbar-light bg-dark">
+        {% if current_user.is_authenticated %}
+            <p class="head">
+                <a class="navbar-brand" id='wht-color1' href="#">Smart Worker</a>
+                <a href="works" class="navbar-brand" id="create_work_btn">Создать заявку</a>
+            </p>
+        {% else %}
+            <a class="navbar-brand" id='wht-color1' href="#">Smart Worker</a>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+            <p class="head">
+            <a class="navbar-brand" id='wht-color2' href="#">{{ current_user.name }}</a>
+            <a id="red-color1" class="btn btn-primary" href="/logout">Выйти</a>
+            </p>
+        {% else %}
+            <p class="head">
+            <a class="btn btn-primary "  id="authorization-btn" href="/register">Зарегистрироваться</a>
+            <a class="btn btn-success" id="registration-btn" href="/login">Войти</a>
+            </p>
+        {% endif %}
+    </nav>
+    </div>
+</header>
+<!-- Begin page content -->
+<main role="main" class="container">
+    {% block content %}{% endblock %}
+</main>
+</body>
