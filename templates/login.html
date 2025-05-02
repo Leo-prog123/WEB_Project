@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="wht-color4">Авторизация</h1>
-<form action="" method="post" novalidate>
+<h1 class="wht-color4" id="login-head">Авторизация</h1>
+<form action=""  id="login" method="post" novalidate>
     {{ form.hidden_tag() }}
     <p>
-        {{ form.email.label }}<br>
-        {{ form.email(class="form-control") }}<br>
+        <p class="input-title"> {{ form.email.label }}</p>
+        <p class="input">{{ form.email(class="form-control") }}</p>
         {% for error in form.email.errors %}
     <div class="alert alert-danger" role="alert">
         {{ error }}
@@ -14,16 +14,16 @@
     {% endfor %}
     </p>
     <p>
-        {{ form.password.label }}<br>
-        {{ form.password(class="form-control", type="password") }}<br>
+        <p class="input-title-pass"> {{ form.password.label }}</p>
+        <p class="input">{{ form.password(class="form-control", type="password") }}</p>
         {% for error in form.password.errors %}
     <div class="alert alert-danger" role="alert">
         {{ error }}
     </div>
     {% endfor %}
     </p>
-    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    <p id="input-check">{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary", id="login-btn") }}</p>
     <div id="wrong">{{ message }}</div>
 </form>
 {% endblock %}

@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Создание заявки</h1>
-<form action="" method="post">
+<h1 id="create-head">Создание заявки</h1>
+<form action="" id="create-form" method="post">
     {{ form.hidden_tag() }}
     <p>
-        {{ form.time.label }}<br>
-        {{ form.time(class="form-control") }}<br>
+        <p class="input-title-r">{{ form.time.label }}</p>
+        {{ form.time(class="form-control") }}
         {% for error in form.time.errors %}
             <p class="alert alert-danger" role="alert">
                 {{ error }}
@@ -14,8 +14,8 @@
         {% endfor %}
     </p>
     <p>
-        {{ form.address.label }}<br>
-        {{ form.address(class="form-control") }}<br>
+    <p class="input-title-r">{{ form.address.label }}</p>
+        {{ form.address(class="form-control") }}
         {% for error in form.address.errors %}
             <p class="alert alert-danger" role="alert">
                 {{ error }}
@@ -23,8 +23,8 @@
         {% endfor %}
     </p>
     <p>
-        {{ form.mph.label }}<br>
-        {{ form.mph(class="form-control") }}<br>
+    <p class="input-title-r">{{ form.mph.label }}</p>
+        {{ form.mph(class="form-control") }}
         {% for error in form.mph.errors %}
             <p content="alert alert-danger" role="alert">
                 {{ error }}
@@ -32,8 +32,8 @@
         {% endfor %}
     </p>
     <p>
-        {{ form.min_pay.label }}<br>
-        {{ form.min_pay(class="form-control") }}<br>
+    <p class="input-title-r">{{ form.min_pay.label }}</p>
+        {{ form.min_pay(class="form-control") }}
         {% for error in form.min_pay.errors %}
             <p content="alert alert-danger" role="alert">
                 {{ error }}
@@ -41,8 +41,8 @@
         {% endfor %}
     </p>
     <p>
-        {{ form.amount.label }}<br>
-        {{ form.amount(class="form-control") }}<br>
+    <p class="input-title-r">{{ form.amount.label }}</p>
+        {{ form.amount(class="form-control") }}
         {% for error in form.amount.errors %}
             <p content="alert alert-danger" role="alert">
                 {{ error }}
@@ -50,15 +50,15 @@
         {% endfor %}
     </p>
     <p>
-        {{ form.description.label }}<br>
-        {{ form.description(class="form-control") }}<br>
+    <p class="input-title-r">{{ form.description.label }}</p>
+        {{ form.description(class="form-control") }}
         {% for error in form.description.errors %}
             <p content="alert alert-danger" role="alert">
                 {{ error }}
             </p>
         {% endfor %}
     </p>
-    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
-    {{message}}
+    <p>{{ form.submit(type="submit", class="btn btn-primary", id="create-btn") }}</p>
+    <div id="wrong">{{message}}</div>
 </form>
 {% endblock %}

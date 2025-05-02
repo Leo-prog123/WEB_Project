@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p>
+  <a class="btn btn-primary " id="worker-btn-act" href="my-works-worker">Работник</a>
+  <a class="btn btn-primary " id="dispatcher-btn" href="my-works-dispatcher">Диспетчер</a>
+  </p>
+{% for item in works[::-1]%}
+{% if item.is_close %}
+    <div class="col-md6 border rounded" id="closed">
+        <h2>{{item.time}}</h2>
+        <div>
+            <h4>{{item.description}}</h4>
+        </div>
+        <div>
+            <h6>Адрес: {{item.address}}</h6>
+            <h6>Диспетчер: {{item.user.name}}, Телефон: {{item.user.phone}}</h6>
+            <h6>Оплата за час: {{item.mph}}р. Минимальная оплата - {{item.mph*item.min_pay}}р.</h6>
+            <h6>Свободно мест: {{item.free}} из {{item.amount}}</h6>
+
+        </div>
+        {% for worker in item.ready.split(':')[:-1] %}
+
+            <div>
+                {{loop.index}}.
+                {{worker.split('|')[1]}}     ({{worker.split('|')[2]}})
+
+            </div>
+            {% endfor %}
+
+    </div>
+{% else %}
+    <div class="col-md6 border rounded" id="opened">
+        <h2>{{item.time}}</h2>
+        <div>
+            <h4>{{item.description}}</h4>
+        </div>
+        <div>
+            <h6>Адрес: {{item.address}}</h6>
+            <h6>Диспетчер: {{item.user.name}}, Телефон: {{item.user.phone}}</h6>
+            <h6>Оплата за час: {{item.mph}}р. Минимальная оплата - {{item.mph*item.min_pay}}р.</h6>
+            <h6>Свободно мест: {{item.free}} из {{item.amount}}</h6>
+
+        </div>
+
+
+        {% if item.ready %}
+        <div>
+            {% for worker in item.ready.split(':')[:-1] %}
+
+            <div>
+                {{ loop.index }}.
+                {{worker.split('|')[1]}}     ({{worker.split('|')[2]}})
+
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+
+
+
+
+    </div>
+{% endif %}
+<p class="timestamp">Создано: {{item.created_date.time().hour}}:{{item.created_date.time().minute}} {{item.created_date.date().day}}.{{item.created_date.date().month}}.{{item.created_date.date().year}}</p>
+{% endfor %}
+{% endblock %}

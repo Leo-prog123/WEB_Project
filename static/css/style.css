@@ -9,7 +9,7 @@
     background: #A9A9A9;
     padding-left: 30px;
     padding-bottom: 15px;
-    padding-top: 15px
+    padding-top: 15px;
     margin-top: 20px;
     }
 
@@ -27,16 +27,22 @@
     padding-bottom: 1px;
     padding-left: 7px;
     padding-right: 7px;
-    margin-bottom: 6px
+    margin-bottom: 6px;
+    border: solid black 1px
 }
 
 #authorization{
     color: red;
-    text-align: center
+    text-align: center;
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px 5px;
+    border: solid 2px red
 }
 
 #wrong{
-    color: red
+    color: red;
+    margin-left: 100px
 }
 
 body {
@@ -44,7 +50,15 @@ body {
 }
 
 #create_work_btn{
-    margin-left: 50px;
+    margin-left: 60px;
+    color: white;
+    border: solid white 1px;
+    padding: 5px;
+    margin-bottom: 0px
+}
+
+#my_work_btn{
+    margin-left: 10px;
     color: white;
     border: solid white 1px;
     padding: 5px;
@@ -91,4 +105,161 @@ body {
 
 .wht-color4{
     color: white
+}
+
+
+#login-head{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 60px
+}
+
+.input{
+    width: 60%;
+    align: center;
+    margin-left: 20%
+}
+
+.input-title{
+    color: white;
+    font-size: 25px;
+    margin-left: 42%;
+    margin-top: 40px;
+    margin-bottom: 5px
+}
+
+.input-title-pass{
+    color: white;
+    font-size: 25px;
+    margin-left: 40%;
+    margin-top: 40px;
+    margin-bottom: 5px
+}
+
+#input-check{
+    color: white;
+    font-size: 25px;
+    margin-left: 27%;
+    margin-top: 50px;
+    margin-bottom: 5px;
+
+}
+
+#login-btn{
+    background-color: #777777;
+    color: white;
+    font-size: 25px;
+    margin-left: 41%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    border: solid red 2px
+
+
+}
+
+#login{
+    border: solid black 3px;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 20px;
+
+}
+
+#register{
+    border: solid black 3px;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 20px;
+
+}
+
+#register-head{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.input-title-r{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 0px
+}
+
+#reg-btn{
+    background-color: #777777;
+    color: white;
+    border: solid red 2px
+}
+
+#create-form{
+    border: solid black 3px;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 20px
+
+}
+
+#create-head{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white
+}
+
+#create-btn{
+    background-color: #777777;
+    color: white;
+    border: solid red 2px
+}
+
+#worker-btn{
+    background-color: #777777;
+    color: white;
+    border: solid red 2px;
+    margin-top: 50px;
+    margin-left: 370px;
+    font-size: 20px
+}
+
+#worker-btn-act{
+    background-color: red;
+    color: white;
+    border: solid black 2px;
+    margin-top: 50px;
+    margin-left: 370px;
+    font-size: 20px
+}
+
+#dispatcher-btn{
+background-color: #777777;
+    color: white;
+    border: solid red 2px;
+    margin-top: 50px;
+    font-size: 20px;
+    margin-left: 100px
+}
+
+#dispatcher-btn-act{
+    background-color: red;
+    color: white;
+    border: solid black 2px;
+    margin-top: 50px;
+    font-size: 20px;
+    margin-left: 100px
 }

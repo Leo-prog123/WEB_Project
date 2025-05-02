@@ -19,7 +19,7 @@ login_manager.init_app(app)
 def index():
     db_sess = db_session.create_session()
     works = sorted(db_sess.query(Works), key=lambda x: (not (x.is_close), x.created_date))
-    return render_template("index.html", works=works)
+    return render_template("index.html", title='Smart Worker', works=works)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -156,19 +156,30 @@ def delete_worker(userid, workid):
     return redirect('/')
 
 
+@app.route('/my-works-worker', methods=['GET', 'POST'])
+@login_required
+def my_worker_works():
+    db_sess = db_session.create_session()
+    works = db_sess.query(Works)
+    new_works = []
+    for work in works:
+        flag = False
+        for worker in work.ready.split(':')[:-1]:
+            if int(worker.split('|')[0]) == current_user.id:
+                new_works.append(work)
+                break
+    works = sorted(new_works, key=lambda x: (not (x.is_close), x.created_date))
+    return render_template("my_works_worker.html", title='Мои Заявки', works=works)
+
+
+@app.route('/my-works-dispatcher', methods=['GET', 'POST'])
+@login_required
+def my_dispatcher_works():
+    db_sess = db_session.create_session()
+    works = db_sess.query(Works).filter(Works.user == current_user)
+    return render_template("my_works_dispatcher.html", title='Мои Заявки', works=works)
+
+
 if __name__ == '__main__':
     db_session.global_init("db/data.db")
-    # db_sess = db_session.create_session()
-    # user = User()
-    # user.name = "Леонид"
-    # user.phone = "89871565504"
-    # user.email = "email@email.ru"
-    # db_sess.add(user)
-    # db_sess.commit()
-    # works = Works(time="Сегодня 9:00", mph=400, min_pay=2, ready='', description='Перевезти 2 шкафа', amount=2, free=2, user_id=1)
-    # db_sess.add(works)
-    # db_sess.commit()
-    # works = Works(time="Завтра 11:00", mph=350, min_pay=2, ready='', description='Офисный переезд', amount=4, free=2, user_id=1)
-    # db_sess.add(works)
-    # db_sess.commit()
     app.run(port=8080, host='127.0.0.1')
