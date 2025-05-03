@@ -177,6 +177,7 @@ def my_worker_works():
 def my_dispatcher_works():
     db_sess = db_session.create_session()
     works = db_sess.query(Works).filter(Works.user == current_user)
+    works = sorted(works, key=lambda x: (not (x.is_close), x.created_date))
     return render_template("my_works_dispatcher.html", title='Мои Заявки', works=works)
 
 

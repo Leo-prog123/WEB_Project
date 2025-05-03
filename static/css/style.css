@@ -31,7 +31,7 @@
     border: solid black 1px
 }
 
-#authorization{
+.authorization{
     color: red;
     text-align: center;
     background-color: white;
@@ -50,12 +50,23 @@ body {
 }
 
 #create_work_btn{
-    margin-left: 60px;
+    margin-left: 10px;
     color: white;
     border: solid white 1px;
     padding: 5px;
     margin-bottom: 0px
 }
+
+
+#create_work_btn:active{
+    margin-left: 10px;
+    color: red;
+    background-color: white;
+    border: solid red 1px;
+    padding: 5px;
+    margin-bottom: 0px
+}
+
 
 #my_work_btn{
     margin-left: 10px;
@@ -64,6 +75,34 @@ body {
     padding: 5px;
     margin-bottom: 0px
 }
+
+#my_work_btn:active{
+    margin-left: 10px;
+    color: red;
+    background-color: white;
+    border: solid red 1px;
+    padding: 5px;
+    margin-bottom: 0px
+}
+
+
+#mainpage_btn{
+margin-left: 60px;
+    color: white;
+    border: solid white 1px;
+    padding: 5px;
+    margin-bottom: 0px
+}
+
+#mainpage_btn:active{
+    margin-left: 60px;
+    color: red;
+    background-color: white;
+    border: solid red 1px;
+    padding: 5px;
+    margin-bottom: 0px
+}
+
 
 #wht-color1{
     color: white;
@@ -232,7 +271,7 @@ body {
     background-color: #777777;
     color: white;
     border: solid red 2px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 370px;
     font-size: 20px
 }
@@ -241,7 +280,7 @@ body {
     background-color: red;
     color: white;
     border: solid black 2px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 370px;
     font-size: 20px
 }
@@ -250,7 +289,7 @@ body {
 background-color: #777777;
     color: white;
     border: solid red 2px;
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 20px;
     margin-left: 100px
 }
@@ -259,7 +298,7 @@ background-color: #777777;
     background-color: red;
     color: white;
     border: solid black 2px;
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 20px;
     margin-left: 100px
 }

@@ -5,6 +5,9 @@
   <a class="btn btn-primary " id="worker-btn-act" href="my-works-worker">Работник</a>
   <a class="btn btn-primary " id="dispatcher-btn" href="my-works-dispatcher">Диспетчер</a>
   </p>
+{% if not works %}
+<h6 class="authorization">У вас нет заявок, в качестве рабочего</h6>
+{% endif %}
 {% for item in works[::-1]%}
 {% if item.is_close %}
     <div class="col-md6 border rounded" id="closed">

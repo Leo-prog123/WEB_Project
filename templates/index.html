@@ -2,7 +2,7 @@
 
 {% block content %}
 {% if not current_user.is_authenticated %}
-<h6 id="authorization">Авторизуйтесь, чтобы иметь возможность откликаться и создавать заявки</h6>
+<h6 class="authorization">Авторизуйтесь, чтобы иметь возможность откликаться и создавать заявки</h6>
 {% endif %}
 {% for item in works[::-1]%}
 {% if item.is_close %}
