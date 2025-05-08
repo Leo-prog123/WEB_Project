@@ -7,7 +7,7 @@ from wtforms.validators import DataRequired
 
 class WorksForm(FlaskForm):
     time = StringField('Дата/Время', validators=[DataRequired()])
-    photo = FileField(validators=[FileRequired()])   # <-------------
+    photo = FileField()   # <-------------
     address = StringField('Адрес', validators=[DataRequired()])
     mph = IntegerField("Почасовая ставка")
     min_pay = IntegerField("Часы минимальной оплаты")

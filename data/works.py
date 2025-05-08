@@ -15,7 +15,7 @@ class Works(SqlAlchemyBase):
     mph = sqlalchemy.Column(sqlalchemy.Integer)
     min_pay = sqlalchemy.Column(sqlalchemy.Integer)
     ready = sqlalchemy.Column(sqlalchemy.String)
-    photo = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    photo = sqlalchemy.Column(sqlalchemy.String, nullable=True) #<------------
     description = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     amount = sqlalchemy.Column(sqlalchemy.Integer)
     free = sqlalchemy.Column(sqlalchemy.Integer)
