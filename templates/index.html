@@ -31,9 +31,15 @@
 {% else %}
     <div class="col-md6 border rounded" id="opened">
         <h2>{{item.time}}</h2>
+
         <div>
             <h4>{{item.description}}</h4>
         </div>
+        {% if item.photo %}
+        <div id="image-con">
+        <img id='image' src="static/images/{{ item.photo }}" alt="Изображение не найдено">
+        </div>
+        {% endif %}
         <div>
             <h6>Адрес: {{item.address}}</h6>
             <h6>Диспетчер: {{item.user.name}}, Телефон: {{item.user.phone}}</h6>

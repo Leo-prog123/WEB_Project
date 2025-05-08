@@ -302,3 +302,15 @@ background-color: #777777;
     font-size: 20px;
     margin-left: 100px
 }
+
+#image{
+    width: 800px;
+    height: 300px;
+    border-radius: 5px;
+    border: solid black 2px;
+    margin-bottom: 20px
+
+}
+
+#image-con{
+}

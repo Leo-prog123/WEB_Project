@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1 id="create-head">Создание заявки</h1>
-<form action="" id="create-form" method="post">
+<form action="" id="create-form" method="post" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
     <p>
         <p class="input-title-r">{{ form.time.label }}</p>
@@ -53,6 +53,14 @@
     <p class="input-title-r">{{ form.description.label }}</p>
         {{ form.description(class="form-control") }}
         {% for error in form.description.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p class="input-title-r">{{ form.photo.label }}</p>
+        {{ form.photo(class="form-control") }}
+        {% for error in form.photo.errors %}
             <p content="alert alert-danger" role="alert">
                 {{ error }}
             </p>
