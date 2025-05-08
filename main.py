@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, redirect, request, abort
 from forms.loginform import LoginForm
 from data import db_session
@@ -5,7 +6,7 @@ from data.users import User
 from data.works import Works
 from forms.user import RegisterForm
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-
+from werkzeug.utils import secure_filename
 from forms.works import WorksForm
 
 app = Flask(__name__)
@@ -90,10 +91,19 @@ def add_works():
         works.description = form.description.data
         works.ready = ''
         works.free = form.amount.data
+        file = request.files['photo']
+        photo_id = 0
+        with open('photo_id.txt', 'r') as id_file:
+            photo_id = int(id_file.readline())
+            file.save('static/images/' + secure_filename(f'{photo_id}.jpg'))
+            works.photo = f'{photo_id}.jpg'
+        with open('photo_id.txt', 'w') as id_file:
+            id_file.write(f'{photo_id + 1}')
         works.is_close = False
         current_user.works.append(works)
         db_sess.merge(current_user)
         db_sess.commit()
+
         return redirect('/')
     return render_template('works.html', title='Создание заявки',
                            form=form)
