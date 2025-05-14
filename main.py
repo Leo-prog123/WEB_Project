@@ -192,5 +192,9 @@ def my_dispatcher_works():
 
 
 if __name__ == '__main__':
+    # для хоста используйте команды
+    # PowerShell 1. winget install --id yuccastream.tuna ; powershell
+    # cmd 2. tuna config save-token tt_temky5g20c6rklbkco0x2uyo0cukhfze
+    # cmd 3. tuna 8080
     db_session.global_init("db/data.db")
     app.run(port=8080, host='127.0.0.1')
